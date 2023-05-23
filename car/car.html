@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LUCKY Self-Drive Car Rental</title>
+  <link rel="stylesheet" type="text/css" href="car.css">
+</head>
+<body>
+  <header>
+    <h1>Lucky Self-Drive Car Rental</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a>
+          <div class="info-box">
+            <p>Welcome to our website! Explore our self-drive car rental services.</p>
+          </div></li>
+        <li><a href="#">Cars</a>
+          <div class="info-box">
+            <p>Discover our wide range of cars, including sedans, SUVs, and luxury vehicles.</p>
+          </div></li>
+        <li><a href="#">About</a>
+          <div class="info-box">
+            <p>Learn more about our company and our commitment to providing quality car rental services.</p>
+          </div></li>
+        <li><a href="#">Contact</a>
+          <div class="info-box">
+            <p>Any queries?</p>
+            <p>Feel free to contact us</p>
+            <p> Ph.no-877448456</p>
+          </div></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Welcome to Self-Drive Car Rental</h2>
+      <p>Explore our range of vehicles and choose the perfect car for your journey.</p>
+
+      <a href="#" class="button" id="view-cars-button">View Cars</a>
+    </section>
+
+    <section id="car-section" style="display: none;">
+      <h2>Our Fleet</h2>
+      <div class="car-list">
+        <div class="car">
+          <img src="C:\Users\phani\Downloads\exterior-right-front-three-quarter-10.webp" alt="Car 1">
+          <h3>Car 1</h3>
+          <p>We have availability of shift and swift Dezire</p>
+          <button class="price-button" data-price="1200">Get Price</button>
+          <ul class="price-details"></ul>
+        </div>
+        <div class="car">
+          <img src="C:\Users\phani\Downloads\CAR2.jpeg">
+          <h3>Car 2</h3>
+          <p>We have Seven Seater Cars.</p>
+          <button class="price-button" data-price="1200">Get Price</button>
+          <ul class="price-details"></ul>
+        </div>
+        <div class="car">
+          <img src="C:\Users\phani\Downloads\CAR 3.avif">
+          <h3>Car 3</h3>
+          <p>We have luxury cars.</p>
+          <button class="price-button" data-price="2400">Get Price</button>
+          <ul class="price-details"></ul>
+        </div>
+        <div class="car">
+          <img src="C:\Users\phani\Downloads\CAR4.jpg">
+          <h3>Car 4</h3>
+          <p>We have Premium cars.</p>
+          <button class="price-button" data-price="2400">Get Price</button>
+          <ul class="price-details"></ul>
+        </div>
+      </div>
+      
+    </section>
+    
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Self-Drive Car Rental. All rights reserved.</p>
+  </footer>
+  <button class="book-now-button" onclick="openBookingPage()">Book Now!</button>
+  <div class="owner-details-container">
+  <div class="owner-details">
+    <p>Owner: Somisetti Bobby</p>
+    <p>Mobile: 8977448456</p>
+  </div>
+</div>
+
+  <script>
+    function openBookingPage() {
+    window.location.href = "bookNow.html";
+  }
+    const viewCarsButton = document.getElementById("view-cars-button");
+    const carSection = document.getElementById("car-section");
+  
+    viewCarsButton.addEventListener("click", function() {
+      carSection.style.display = "block";
+    });
+  
+    const priceButtons = document.querySelectorAll(".price-button");
+  
+    priceButtons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        const price = this.dataset.price;
+        const priceDetails = this.nextElementSibling;
+        priceDetails.innerHTML = `
+          <li>12 hours: ${price}/-</li>
+          <li>24 hours: ${price * 2}/-</li>`;
+      });
+    });
+  </script>
+  
