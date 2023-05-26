@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: proj-001
+  name: proj-002
   labels:
     app: blue
 spec:
