@@ -19,4 +19,4 @@ spec:
         image: noobuser008/my-image001
        
         ports:
-        - containerPort: 8000
+        - containerPort: 8443
